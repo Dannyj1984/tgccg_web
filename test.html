@@ -500,7 +500,7 @@ Prophylaxis
             <div class="col-xs-8 col-md-4 mb-3">
                 <div class="portfolio-item mx-auto">
                     <div class="column text-center">
-                        <button  aria-controls="AdInHC" aria-expanded="false" class="btn btn-primary general" data-target="#AdInHC" data-toggle="collapse" type="button">Adult Inpatients</button>
+                        <button onclick="onlyAdInpat()" aria-controls="AdInHC" aria-expanded="false" class="btn btn-primary general" data-target="#AdInHC" data-toggle="collapse" type="button">Adult Inpatients</button>
                     </div>
                 </div>
             </div>
@@ -508,7 +508,7 @@ Prophylaxis
             <div class="col-xs-8 col-md-4 mb-3">
                 <div class="portfolio-item mx-auto">
                     <div class="column text-center">
-                        <button aria-controls="PaedInHC" aria-expanded="false" class="btn btn-primary general" data-target="#PaedInHC" data-toggle="collapse" type="button">Paediatric Inpatients</button>
+                        <button onclick="onlyPaedInpat()" aria-controls="PaedInHC" aria-expanded="false" class="btn btn-primary general" data-target="#PaedInHC" data-toggle="collapse" type="button">Paediatric Inpatients</button>
                     </div>
                 </div>
             </div>
@@ -516,7 +516,7 @@ Prophylaxis
             <div class="col-xs-8 col-md-4 mb-3">
                 <div class="portfolio-item mx-auto">
                     <div class="column text-center">
-                        <button aria-controls="HCGeneralGuidelines" aria-expanded="false" class="btn btn-primary general" data-target="#HCGeneralGuidelines" data-toggle="collapse" type="button">Hospital Guidelines</button>
+                        <button onclick="onlyHospGuide()" aria-controls="HCGeneralGuidelines" aria-expanded="false" class="btn btn-primary general" data-target="#HCGeneralGuidelines" data-toggle="collapse" type="button">Hospital Guidelines</button>
                     </div>
                 </div>
             </div>
@@ -525,7 +525,7 @@ Prophylaxis
             <div class="col-xs-8 col-md-4 mb-3">
                 <div class="portfolio-item mx-auto">
                     <div class="column text-center">
-                        <button aria-controls="HCProphylaxis" aria-expanded="false" class="btn btn-primary general" data-target="#HCProphylaxis" data-toggle="collapse" type="button">Prophylaxis</button>
+                        <button onclick="onlyProph()" aria-controls="HCProphylaxis" aria-expanded="false" class="btn btn-primary general" data-target="#HCProphylaxis" data-toggle="collapse" type="button">Prophylaxis</button>
                     </div>
                 </div>
             </div>
@@ -533,7 +533,7 @@ Prophylaxis
     </div>
     <!--Adult inpatient section button-->
     <div class="container">
-        <div class="row collapse hide pb-2" id="AdInHC">
+        <div class="row collapse hide pb-2" id="AdInHC" style="display:none">
             <div class="col-lg-12"><h3 class="text-center">Adult Inpatients</h3>
                 <hr>
             </div>
@@ -706,7 +706,7 @@ Prophylaxis
     </div>
     <!--Paeditric inpatient section button-->
     <div class="container">
-        <div class="row collapse hide pb-2" id="PaedInHC">
+        <div class="row collapse hide pb-2" id="PaedInHC" style="display:none">
             <div class="col-lg-12"><h3 class="text-center">Paediatric Inpatients</h3>
                 <hr>
             </div>
@@ -816,7 +816,7 @@ Prophylaxis
 
     <!--Hospital General Guidance-->
      <div class="container">
-        <div class="row collapse hide pb-2" id="HCGeneralGuidelines">
+        <div class="row collapse hide pb-2" id="HCGeneralGuidelines" style="display:none">
             <div class="col-lg-12">
                 <h3 class="text-center">Hospital Guidelines</h3>
                 <hr>
@@ -936,7 +936,7 @@ Prophylaxis
 
     <!--Prophylaxis-->
      <div class="container">
-        <div class="row collapse hide pb-2" id="HCProphylaxis">
+        <div class="row collapse hide pb-2" id="HCProphylaxis" style="display:none">
             <div class="col-lg-12">
                 <h3 class="text-center">Prophylaxis</h3>
                 <hr>
@@ -11491,6 +11491,267 @@ Prophylaxis
         </div>
     </div>
 </div>
+
+<!--Hospital Prophylaxis Modals-->
+
+<!-- Prophylaxis Medical Prophylaxis section-->
+<div aria-hidden="true" aria-labelledby="HCMedProphLabel" class="portfolio-modal modal fade " id="HCMedProph" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+            <span aria-hidden="true"><i class="fas fa-times">&nbsp;</i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <!-- Portfolio Modal - Title-->
+                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="HCPaedENTLabel">Medical Prophylaxis</h2>
+                            <!-- Icon Divider-->
+                            <div class="divider-custom">
+                                <div class="divider-custom-line">&nbsp;</div>
+                                <div class="divider-custom-icon">
+                                    <i class="fas fa-star">&nbsp;</i>
+                                </div>
+                                <div class="divider-custom-line">&nbsp;</div>
+                            </div>
+                            <div class="text-left">
+                                <h4 id="HCMedProphSection"><a href="#MedProphDiptheria">Diptheria</a></h4>
+                                <h4><a href="#MedProphSpleen">Elective or Emergency Splenectomy</a></h4>
+                                <h4><a href="#MedProphEndocar">Endocarditis</a></h4>
+                                <h4><a href="#MedProphHib">Haemophilus Influenza Type B (Hib)</a></h4>
+                                <h4><a href="#MedProphMeningitis">Meningococcal Meningitis or Septicaemia</a></h4>
+                                <h4><a href="#MedProphRheumatic">Prevention of Rheumatic Fever</a></h4>
+                                <h4><a href="#MedProphSponBacPer">Spontaneous Bacterial Peritonitis</a></h4>
+                                <h4><a href="#MedProphTetanusSection">Tetanus</a></h4>
+                                <h4><a href="#MedProphWhoop">Whooping Cough (Pertussis)</a></h4>
+                                
+                            </div>
+                            <br/>
+                            <div class="text-left" id="MedProphDiptheria">
+                                <h2 class="text-center" id="MedProphDiptheriaLabel">Diptheria</h2>
+                                <p><span style="color:#000000">Prevention of secondary cases in non-immune patients - for close contacts, in conjunction with immunisation of susceptible individuals:</span></p>
+                                <p><span style="color:#000000"><strong>Adult: </strong></span><span style="color:#0000ff"><strong>Clarith<strong>romycin </strong>po 500mg bd for 7 days.</strong></span></p>
+                                <p><span style="color:#000000"><strong>Child:</strong></span> <span style="color:#0000ff"><strong>see Children's BNF - give for 7 days.</strong></span></p>
+                                <p><span style="color:#000000">Treat for a further 10 days if nasopharyngeal swabs positive after first 7 days of treatment.</span></p>
+                            </div>
+                            <div class="text-left" id="MedProphSpleen">
+                                <h2 class="text-center" id="MedProphSpleenLabel">Elective or Emergency Splenectomy</h2>
+                                <p>For post-splenectomy prophylaxis please see section titled 'Surgical Prophylaxis.'
+                                </p>
+                            </div>
+                            <div class="text-left" id="MedProphEndocar">
+                                <h2 class="text-center" id="MedProphEndocarLabel">Endocarditis</h2>
+                                <p>See Dental Endocarditis Prophylaxis in section on Surgical Prophylaxis.
+                                </p>
+                            </div>
+                            <div class="text-left" id="MedProphHib">
+                                <h2 class="text-center" id="MedProphHibLabel">Haemophilus Influenzae type B (Hib)
+                                </h2>
+                                <p><span style="color:#000000"><strong>Haemophilus Influenzae type B (Hib) Meningitis, Epiglottitis or Other </strong><strong>Invasive Disease</strong></span></p>
+                                <p><span style="color:#0000ff"><strong>Rifampicin 600 mg od for 4 days</strong></span>;</p>
+                                <p><strong><span style="color:#000000">Child over 3 months:</span> <span style="color:#0000ff">Rifampicin 20mg/kg&nbsp;od for 4 days, up to a maximum of 600mg daily. </span></strong></p>
+                                <p><strong><span style="color:#000000">Child between 1- 3 months:</span>&nbsp;<span style="color:#0000ff">Rifampicin 10mg/kg od for 4 days.</span></strong></p>
+                                <p><strong>If rifampicin is contraindicated or in pregnancy/breastfeeding,</strong></p>
+                                <p><strong><span style="color:#0000ff">Ceftriaxone [unlicensed indication] IM or IV 1&nbsp;g od 2 days</span></strong></p>
+                                <p><strong><span style="color:#000000">Child 1 month–12 years </span><span style="color:#0000ff">Ceftriaxone 50&nbsp;mg/kg (max. 1&nbsp;g) od for 2 days</span> <span style="color:#ff0000">by&nbsp;IV infusion only</span></strong></p>
+                                <p><span style="color:#000000">Give to all household members irrespective of age where there is an index case of Hib disease and a child less than 4 years.</span></p>
+                                <p><span style="color:#000000">Report to&nbsp;Public Health England as soon as possible (is a notifiable disease).</span></p>
+                                
+                            </div>
+                            <div class="text-left" id="MedProphMeningitis">
+                                <h2 class="text-center" id="MedProphMeningitisLabel">Meningococcal Meningitis or Septicaemia</h2>
+                                <p><span style="color:#000000"><u><strong>Indications for antibiotic prophylaxis</strong></u></span></p>
+                                <p><span style="color:#000000">Antibiotic prophylaxis&nbsp;should be offered to the following:</span></p>
+                                <ul>
+                                    <li><span style="color:#000000"><strong>Close contacts </strong>-</span>&nbsp;those who have had&nbsp;prolonged close contact with the case in a household type setting during the seven days before onset of illness. Examples of such contacts would be those living and/or sleeping in the same household, pupils in the same dormitory, boy/girlfriends, or university students sharing a kitchen in a hall of residence.</li>
+                                    <li><span style="color:#000000"><strong>Transient contacts </strong></span>-&nbsp; those who have had transient close contact with a case<span style="color:#000000"> <u><strong>only</strong></u> if </span>they have been <span style="color:#000000"><strong>directly exposed to large particle droplets/secretions from the respiratory tract of a case around the time of admission to hospital.</strong></span></li>
+                                </ul>
+                                <p>Close contact does<span style="color:#000000"> <u><strong>NOT</strong></u> </span>include:</p>
+                                <ul>
+                                    <li>staff and children attending same nursery or crèche</li>
+                                    <li>students/pupils in same school/class/tutor group</li>
+                                    <li>work or school colleagues</li>
+                                    <li>friends</li>
+                                    <li>residents of nursing/residential homes</li>
+                                    <li>kissing on cheek or mouth (intimate kissing would normally bring the contact into the close, prolonged contact category)</li>
+                                    <li>food or drink sharing or similar low level of salivary contact</li>
+                                    <li>attending the same social function</li>
+                                    <li>travelling in next seat on same plane, train, bus, or car (in the absence of intense exposure to nasopharyngeal secretions).</li>
+                                </ul>
+                                <p><span style="color:#000000"><u><strong>Prevention of secondary cases</strong></u></span></p>
+                                <p>Chemoprophylaxis should be prescribed following discussion with the specialist team at the PHE North West on 0344 225 0562 within office hours and via Tameside&nbsp;Hospital switchboard out of hours–ask for the PHE North West on call.</p>
+                                <p><span style="color:#000000"><strong>1st line:</strong></span>&nbsp;</p>
+                                <p><strong>Adult:<span style="color:#0000ff"> Ciprofloxacin 500mg po as a single dose</span></strong>.</p>
+                                <p><strong>Neonate:</strong> <span style="color:#0000ff"><strong>Ciprofloxacin 30mg/kg (max. per dose 125mg) po&nbsp;for 1 dose.</strong></span></p>
+                                <p><strong>Child 1 month to 4 years:</strong> <span style="color:#0000ff"><strong>Ciprofloxacin 30mg/kg (max. per dose 125mg) po for 1 dose.</strong></span></p>
+                                <p><strong>Child 5 to 11 years:</strong> <span style="color:#0000ff"><strong>Ciprofloxacin 250mg po for 1 dose.</strong></span></p>
+                                <p><strong>Child 12 to 17 years:</strong> <strong><span style="color:#0000ff">Ciprofloxacin 500mg po for 1 dose.</span></strong></p>
+                                <p><span style="color:#000000"><strong>Ciprofloxacin in pregnancy</strong></span></p>
+                                <p>A single dose of ciprofloxacin 500mg po can be used for the prevention of secondary cases of meningococcal meningitis/bacteraemia in pregnancy.</p>
+                                <p><span style="color:#000000"><strong>Or if unable to take ciprofloxacin or if contraindicated,</strong></span></p>
+                                <p><span style="color:#000000"><strong>2nd line:</strong></span></p>
+                                <p><strong>Adult:</strong> <span style="color:#0000ff"><strong>Rifampicin 600mg po every 12 hours for 2 days.</strong></span></p>
+                                <p><strong>Neonate to 11 months: <span style="color:#0000ff">Rifampicin 5mg/kg po every 12 hours for 2 days.</span></strong></p>
+                                <p><strong>Child 1 to 11 years: <span style="color:#0000ff">Rifampicin 10mg/kg po every 12 hours (max. per dose 600mg), for 2 days.</span></strong></p>
+                                <p><strong>Child 12 to 17 years:</strong> <strong><span style="color:#0000ff">Rifampicin 600mg po every 12 hours for 2 days.</span></strong></p>
+                                <p>In addition, give rifampicin to the index case (unless they have had treatment with ceftriaxone or moxifloxacin), before discharge from hospital.</p>
+                                <p><span style="color:#000000"><strong>Or if rifampicin is contraindicated,</strong></span></p>
+                                <p><span style="color:#000000"><strong>3rd line:</strong></span><span style="color:#0000ff"><strong> Ceftriaxone 250mg IM stat dose </strong></span>(<strong><span style="color:#0000ff">125mg in a child under 12yrs</span></strong>).</p>
+                                <p>(NB not licensed for this indication).</p>
+                                <p>Report to&nbsp;Public Health England as soon as possible (is a notifiable disease).</p>
+                                <p>Further advice can be sought from Greater Manchester Health Protection Unit 0161 786 6710 or via switchboard out of hours.</p>
+                                <p>For other useful numbers please see <a href="https://www.gov.uk/emergency-contacts-public-health" target="_blank"><span style="color:#0066cc">https://www.gov.uk/emergency-contacts-public-health</span></a></p>
+                                <p><strong>References:</strong></p>
+                                <p>Public Health England.&nbsp; Guidance for the public health management of meningococcal disease in the UK.&nbsp;February 2018. <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/688835/Public_health_management_of_meningococcal_disease_guidelines.pdf" target="_blank">https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/688835/Public_health_management_of_meningococcal_disease_guidelines.pdf</a></p>
+                            </div>
+                            <div class="text-left" id="MedProphRheumatic">
+                                <h2 class="text-center" id="MedProphRheumaticLabel">Prevention of Rheumatic Fever</h2>
+                                <p><span style="color:#000000">Prevention of recurrent attacks (particularly in children):</span></p>
+                                <p><span style="color:#0000ff"><strong>Phenoxymethylpenicillin po 250mg&nbsp;bd.</strong></span></p>
+                                <p><span style="color:#000000"><strong>For children under 1 year:</strong></span><span style="color:#0000ff"><strong> dose according to body weight.</strong></span></p>
+                                <p><span style="color:#000000"><u><strong>Penicillin allergy</strong></u></span></p>
+                                <p><strong><span style="color:#000000">Age 12 years and over: </span><span style="color:#800080">Clarithromycin&nbsp;250mg po bd.</span></strong></p>
+                                <p><strong><span style="color:#000000">For children under 12 years:</span><span style="color:#800080"> Dose according to body weight and give half of total daily dose once daily.</span></strong></p>
+                            </div>
+                            <div class="text-left" id="MedProphSponBacPer">
+                                <h2 class="text-center" id="MedProphSponBacPerLabel">Spontaneous Bacterial Peritonitis</h2>
+                                <p><strong><span style="color:black">Prophylaxis after initial episode of SBP:&nbsp;</span></strong><span style="color:#800080"><strong>Ciprofloxacin 500mg po od.</strong></span></p>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="text-left" id="MedProphTetanusSection">
+                            <h2 class="text-center" id="MedProphTetanusSectionLabel">Tetanus
+                            </h2>
+                            <p>Tetanus prone wounds include:</p>
+                            <p> wounds or burns that require surgical intervention that is delayed for more than six hours</p>
+                            <p> wounds or burns that show a significant degree of devitalised tissue or a puncture-type injury, particularly where there has been contact with soil or manure</p>
+                            <p> wounds containing foreign bodies</p>
+                            <p> compound fractures</p>
+                            <p> wounds or burns in patients who have systemic sepsis.</p>
+                        </div>
+
+                            
+                            <!--Accordian-->
+                            <div id="accordionMedProTet">
+                                <div class="card">
+                                    <div class="card-header" id="tetanusInMedProph">
+                                        <h5 class="mb-0"><button aria-controls="collapsetetanusInMedProph" aria-expanded="false" class="btn btn-link collapsed" data-target="#collapsetetanusInMedProph" data-toggle="collapse" type="button">Mild / Moderate</button></h5>
+                                    </div>
+                                    <div aria-labelledby="tetanusInMedProph" class="collapse" data-parent="#accordionMedProTet" id="collapsetetanusInMedProph">
+                                        <div class="card-body text-left">
+                                            
+                                            <table border="1" class="table table-striped table-bordered">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td><span style="color:#008000"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Clean Wound</strong></span></td>
+                                                        <td colspan="2">
+                                                            <p><span style="color:#ff0000"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tetanus-prone Wound</strong></span></p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span style="color:#0000ff"><strong>Immunisation status</strong></span></td>
+                                                        <td><span style="color:#800080"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vaccine</strong></span></td>
+                                                        <td><span style="color:#800080"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vaccine</strong></span></td>
+                                                        <td><span style="color:#008080"><strong>&nbsp; Human&nbsp;Immunoglobulin</strong></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p>Fully immunised, i.e. has received a total of five doses of vaccine at appropriate intervals</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None required</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None required</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Only if high risk*</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p>Primary immunisation complete, boosters incomplete but up to date</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None required</p>
+                                                            <p>(unless next dose due soon and convenient to give now)</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; None required</p>
+                                                            <p>(unless next dose due soon and convenient to give now)</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Only if high risk*</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p>Primary immunisation incomplete or boosters not up to date</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>A reinforcing dose of vaccine and further doses as required to complete the recommended schedule (to ensure future immunity)</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>A reinforcing dose of vaccine and further doses as required to complete the recommended schedule (to ensure future immunity)</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>Yes: one dose of human tetanus immunoglobulin in a different site</p>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p>Not immunised or immunisation status not known or uncertain</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>An immediate dose of vaccine followed, if records confirm the need, by completion of a full five-dose course to ensure immunity</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>An immediate dose of vaccine followed, if records confirm the need, by completion of a full five-dose course to ensure immunity</p>
+                                                        </td>
+                                                        <td>
+                                                            <p>Yes: one dose of human tetanus immunoglobulin in a different site</p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p><strong>* </strong>High risk is regarded as heavy contamination with material likely to contain tetanus spores and/or extensive devitalised tissue.</p>
+                                            
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            
+                        
+                        <br>
+                        <div class="container">
+                            <div class="text-left" id="MedProphWhoop">
+                                <h2 class="text-center" id="MedProphWhoopLabel">Whooping Cough (Pertussis)
+                                </h2>
+                                <p><strong><span style="color:#000000">Prevention of secondary cases:</span></strong></p>
+                                <p><span style="color:#000000"><strong>Adult: </strong></span><span style="color:#0000ff"><strong>Clarith<strong>romycin </strong>po 500mg bd for 7 days.</strong></span></p>
+                                <p><span style="color:#000000"><strong>Child:</strong></span> <span style="color:#0000ff"><strong>see Children's BNF - give for 7 days.</strong></span></p>
+                            </div>
+                            
+                            
+                            
+                            <br>
+                            <!--floating icon-->
+                            <a href="#HCMedProphSection" class="float"> <i class="fa fa-arrow-up my-float">&nbsp;</i> </a>
+                            <button class="btn btn-primary" data-dismiss="modal">Close Window</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- Bootstrap core JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" type="text/javascript"></script>
@@ -11565,12 +11826,78 @@ crossorigin="anonymous"></script>
   }
 }
 
+//Clicking on A&E Paed button
+    function onlyPaedInpat() {
+  var a = document.getElementById("PaedInHC");
+  var b = document.getElementById("AdInHC");
+  var c = document.getElementById("HCGeneralGuidelines");
+  var d = document.getElementById("HCProphylaxis");
+  if(a.style.display === "none"){
+    a.style.display = "flex";
+  } else {
+    a.style.display = "none";
+  }
+  if(b.style.display === "flex"){
+    b.style.display = "none";
+  }
+  if(c.style.display === "flex"){
+    c.style.display = "none";
+  }
+  if(d.style.display === "flex"){
+    d.style.display = "none";
+  }
+}
+
 //Clicking on A&E Adults button
     function onlyAdInpat() {
   var a = document.getElementById("AdInHC");
   var b = document.getElementById("PaedInHC");
   var c = document.getElementById("HCGeneralGuidelines");
   var d = document.getElementById("HCProphylaxis");
+  if(a.style.display === "none"){
+    a.style.display = "flex";
+  } else {
+    a.style.display = "none";
+  }
+  if(b.style.display === "flex"){
+    b.style.display = "none";
+  }
+  if(c.style.display === "flex"){
+    c.style.display = "none";
+  }
+  if(d.style.display === "flex"){
+    d.style.display = "none";
+  }
+}
+
+//Clicking on Hosp Guidelines button
+    function onlyHospGuide() {
+  var a = document.getElementById("HCGeneralGuidelines");
+  var b = document.getElementById("PaedInHC");
+  var c = document.getElementById("AdInHC");
+  var d = document.getElementById("HCProphylaxis");
+  if(a.style.display === "none"){
+    a.style.display = "flex";
+  } else {
+    a.style.display = "none";
+  }
+  if(b.style.display === "flex"){
+    b.style.display = "none";
+  }
+  if(c.style.display === "flex"){
+    c.style.display = "none";
+  }
+  if(d.style.display === "flex"){
+    d.style.display = "none";
+  }
+}
+
+//Clicking on Prophylaxis Guidelines button
+    function onlyProph() {
+  var a = document.getElementById("HCProphylaxis");
+  var b = document.getElementById("PaedInHC");
+  var c = document.getElementById("AdInHC");
+  var d = document.getElementById("HCGeneralGuidelines");
   if(a.style.display === "none"){
     a.style.display = "flex";
   } else {
